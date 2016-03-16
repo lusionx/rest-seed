@@ -1,0 +1,9 @@
+.DS_*
+node_modules
+*.sublime*
+*.swp
+psd
+thumb
+*.log
+*.js
+*~

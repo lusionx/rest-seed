@@ -1,0 +1,31 @@
+{
+  "name": "rest-seed",
+  "version": "0.0.1",
+  "description": "Standard rest server, Base on restify and sequelize",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lusionx/rest-seed.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lusionx/rest-seed/issues"
+  },
+  "homepage": "https://github.com/lusionx/rest-seed#readme",
+  "dependencies": {
+    "async": "^1.5.2",
+    "commander": "^2.9.0",
+    "lodash": "^4.6.1",
+    "moment": "^2.12.0",
+    "redis": "^2.5.1",
+    "request": "^2.69.0",
+    "restify": "^4.0.4"
+  }
+}
