@@ -6,4 +6,3 @@ rest-seed
 ## 插件
 
 rest-seed-mongo
-
