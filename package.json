@@ -1,7 +1,7 @@
 {
   "name": "rest-seed",
-  "version": "0.0.1",
-  "description": "Standard rest server, Base on restify and sequelize",
+  "version": "0.0.2",
+  "description": "Standard rest server, Base on restify and redis",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/lusionx/rest-seed.git"
   },
-  "author": "",
+  "author": "liu xing",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/lusionx/rest-seed/issues"
@@ -32,5 +32,11 @@
   "devDependencies": {
     "log4js": "^0.6.33",
     "should": "^8.2.2"
-  }
+  },
+  "keywords": [
+    "api",
+    "rest",
+    "seed",
+    "redis"
+  ]
 }
