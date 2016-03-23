@@ -1,14 +1,13 @@
 #! /usr/bin/env coffee
 
 params    = require 'commander'
-_         = require 'underscore'
+_         = require 'lodash'
 init      = require './src/init'
 tableSync = require './src/table-sync'
 pkg       = require '../package'
 
 params
   .version(pkg.version)
-  .option('table-sync', '根据model定义同步表结构')
   .option('init',       '初始化一个新的应用')
   .parse(process.argv)
 

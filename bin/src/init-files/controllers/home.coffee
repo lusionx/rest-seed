@@ -6,10 +6,6 @@ config    = require '../configs'
 helper    = require './helper'
 
 
-logger    = utils.getLogger 'ctr-home'
-
-
-
 module.exports =
   index: (req, res, next) ->
     res.end "Hello world, now is: #{new Date}"
