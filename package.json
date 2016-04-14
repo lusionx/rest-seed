@@ -1,6 +1,6 @@
 {
   "name": "rest-seed",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Standard rest server, Base on restify and redis",
   "main": "index.js",
   "directories": {
@@ -22,7 +22,7 @@
   "dependencies": {
     "async": "^1.5.2",
     "commander": "^2.9.0",
-    "lodash": "^4.6.1",
+    "lodash": "^3.10.1",
     "moment": "^2.12.0",
     "redis": "^2.5.1",
     "request": "^2.69.0",
