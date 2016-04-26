@@ -1,17 +1,15 @@
 fs        = require 'fs'
 path      = require 'path'
 _         = require 'lodash'
+request   = require 'request'
 async     = require 'async'
+redis     = require 'redis'
+
 
 # 随机字符串字典
 RAND_STR_DICT =
   noraml: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
   strong: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~!@#$%^&*()_+<>{}|\=-`~'
-
-cache = null
-cacheDelay = () ->
-  return if cache
-  cache = redis.createClient conf.redis.port, conf.redis.host
 
 utils =
 
@@ -122,38 +120,6 @@ utils =
     length = dict.length
     (dict[Math.floor((Math.random() * length))] for i in [1..len]).join('')
 
-  redis: (m, key, arr...) ->
-    cacheDelay()
-    arr.unshift conf.redis.namespace + '::' + key
-    fn = cache[m]
-    fn.apply cache, arr
-
-  getCache: (key, cb) ->
-    cacheDelay()
-    namespace = conf.redis.namespace
-    k = namespace + '::' + key
-    cache.get k, (err, data) ->
-      return cb err if err
-      cb null, JSON.parse data
-
-  getCacheKeys: (key, cb) ->
-    cacheDelay()
-    namespace = conf.redis.namespace
-    k = namespace + '::' + key
-    cache.keys k, (err, data) ->
-      return cb err if err
-      cb null, _.map data, (e) -> e[namespace.length+2..]
-
-  setCache: (key, val, life=60, cb=null) ->
-    cacheDelay()
-    namespace = conf.redis.namespace
-    k = namespace + '::' + key
-    v = JSON.stringify val
-    cache.set k, v, (err) ->
-      return cb? err if err
-      cache.expire k, +life or 1, (err) ->
-        cb? err if err
-        cb? null
 
   request: (par, cb) ->
     fn = (callback) ->
