@@ -1,6 +1,7 @@
 fs        = require 'fs'
 path      = require 'path'
 _         = require 'lodash'
+async     = require 'async'
 
 # 随机字符串字典
 RAND_STR_DICT =
