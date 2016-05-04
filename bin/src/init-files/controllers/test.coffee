@@ -10,8 +10,8 @@ tv4 =[
   helper.check.params
     type: 'object'
     properties:
-      data:
-        type: 'access_token'
+      access_token:
+        type: 'string'
     required: ['access_token']
   (req, res, next) ->
     res.json req.params
